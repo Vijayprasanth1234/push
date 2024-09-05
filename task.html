@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #div1{
+        border:2px solid red;
+        display: flex;
+        flex-wrap: wrap;
+
+      }  
+      img{
+        height: 100px;
+        width: 100px;
+      
+      }
+      
+    </style>
+</head>
+<body>
+    
+    <button id="btn">Click</button>
+    <p></p>
+    <div id="div1"></div>
+    <script>
+    //     function demo(){
+    //    let ul=document.createElement("ul");
+    //    document.body.appendChild(ul);//append in body
+    //    let li=document.createElement("li");
+    //    let vo=document.createElement("li")
+    //    vo.innerText="<h1>Html"
+    //    li.innerHTML="<h1>html";
+    //    ul.appendChild(li)
+    //    ul.appendChild(vo)   //btn.addeventlistner("eventname",fun())
+    //     }
+
+
+
+    //program to print random names
+//     let arr=["hi","hello","Something"]
+//     let count=0
+//     function demo(){
+//         let ul=document.createElement("ul")
+        
+//         document.body.appendChild(ul)
+        
+        
+//         if(count<arr.length){
+//         let li=document.createElement("li")
+//         li.innerHTML=arr[count]
+//         ul.appendChild(li)
+//         count++
+
+//         }
+//         else{
+//             alert("no more data")
+
+//         }
+// let arr=["hi","hello","something","welcome","happy"]
+let imgsrc=[{name:"vijay",
+    Institute:"1000Coders",
+    Description:"Anime Lover",
+    image:"vijay.jpg"
+
+},{   name:"VinodChoudhary",
+    Institute:"1000Coders",
+    Description:"OverThinker",
+    image:"vinod.jpg"
+
+},{   name:"Sushanth",
+    Institute:"1000Coders",
+    Description:"Short Boy",
+    image:"suss.jpg"
+
+},{   name:"vamsi",
+    Institute:"1000Coders",
+    Description:"Different Guy",
+    image:"vamsi.jpg"
+
+},{   name:"Gang",
+    Institute:"1000Coders",
+    Description:"Dontknow",
+    image:"gang.jpg"
+
+},{name:"Nicephoto",
+    Institute:"1000Coders",
+    Description:"OMG",
+    image:"vamsi.jpg"
+
+}
+
+    ]
+
+    let btn = document.getElementsByTagName("button")
+btn[0].addEventListener("click", ()=>{
+    let imgIndex = Math.floor(Math.random() * imgsrc.length)
+    let div1 = document.getElementById("div1")
+    
+    let img = document.createElement("img")
+    img.src = imgsrc[imgIndex].image
+    img.height = "100"
+    img.width = "100"
+    
+    let name = document.createElement("p")
+    name.innerText = `Name: ${imgsrc[imgIndex].name}`
+    
+    let institute = document.createElement("p")
+    institute.innerText = `Institute: ${imgsrc[imgIndex].Institute}`
+    
+    let description = document.createElement("p")
+    description.innerText = `Description: ${imgsrc[imgIndex].Description}`
+    
+    let container = document.createElement("div")
+    container.appendChild(img)
+    container.appendChild(institute)
+    container.appendChild(name)
+    container.appendChild(description)
+    
+    let hr = document.createElement("hr") // create an hr element
+    container.appendChild(hr) // add the hr element to the container
+    
+    div1.appendChild(container)
+})
+
+// }
+    </script>
+</body>
+</html>
